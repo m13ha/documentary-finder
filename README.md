@@ -16,4 +16,4 @@ All you have to do is type in a the name of what you want to see a documentary o
 * Youtube Api
 
 
-you can use the app [HERE](http://a.com)
+you can use the app [HERE](https://angelmikeal.github.io/documentary-finder/)
