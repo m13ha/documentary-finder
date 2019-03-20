@@ -61,9 +61,11 @@ var app = {
 
     init: function () {
         let search = $('.searchBut');
+        let tab = $('#searchText');
+
         search.click(function (e) {
             e.preventDefault();
-            let searchText = $('#searchText').val();
+            let searchText = tab.val();
             let text = searchText.replace(/\s/g, '+');
             if (searchText.length > 0) {
                 let vidContainer = $('.video-container');
@@ -77,7 +79,32 @@ var app = {
             } else {
                 //do nothing
             }
+        });
+
+        tab.addEventListener("keydown", function (e) {
+            e.preventDefault();
+            if( e.keycode === 13){
+                let searchText = tab.val();
+                let text = searchText.replace(/\s/g, '+');
+                if (searchText.length > 0) {
+                    let vidContainer = $('.video-container');
+                    vidContainer.html(' ');
+                    vidContainer.removeClass('error');
+                    let alternatives = $('.altList');
+                    alternatives.html(' ');
+                    app.vidGet(text);
+                    app.vidChange();
+
+                } else {
+                    //do nothing
+                }
+            }else {
+                // do nothing
+            }
         })
+
+
+
     },
 
 
