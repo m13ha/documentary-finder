@@ -2,10 +2,10 @@ var currentVid = '';
 
 var app = {
     vidGet: function (text) {
-        fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${text}documentary&type=video&videoEmbbeddable=true&maxResults=10&key=AIzaSyCTKSwKCtCvygxop6ceCc8Sf3HUuFwiN08`)
+        fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${text}documentary&type=video&videoEmbbeddable=true&maxResults=10&key=AIzaSyCx9QnyW7PRmk8qJmIDWP1Fodbx0rmg5Vc`)
             .then(res => res.json())
             .then(data => this.vidCreate(data))
-            .catch(data => this.errorMessage());
+            .catch(data => this.errorMessage(data.errorMessage));
     },
 
     vidCreate: function (data) {
